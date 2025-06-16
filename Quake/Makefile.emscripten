@@ -65,8 +65,8 @@ define do_strip
 endef
 endif
 USE_FLAGS=-pthread --use-port=sdl2 --use-port=zlib --use-port=vorbis -O3
-CFLAGS+=$(USE_FLAGS) -I/src/deps/gl4es/include -DUSE_SDL2 -DSDL_FRAMEWORK
-LDFLAGS+= $(USE_FLAGS) -sFULL_ES2 /src/deps/gl4es/lib/libGL.a \
+CFLAGS+=$(USE_FLAGS) -I./deps/gl4es/include -DUSE_SDL2 -DSDL_FRAMEWORK
+LDFLAGS+= $(USE_FLAGS) -sFULL_ES2 ./deps/gl4es/lib/libGL.a \
 	-sASYNCIFY -sASYNCIFY_STACK_SIZE=32768 -sSTACK_SIZE=512kb \
 	-sALLOW_MEMORY_GROWTH -sINITIAL_MEMORY=256mb -sMEMORY_GROWTH_LINEAR_STEP=64mb \
 	-sENVIRONMENT=web,worker -sPTHREAD_POOL_SIZE=4 -Wno-pthreads-mem-growth -sMODULARIZE \
